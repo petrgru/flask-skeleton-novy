@@ -19,3 +19,4 @@ class Maso(CRUDModel):
         for k, v in kwargs.iteritems():
             setattr(self, k, v)
 
+'''sjdhfkjsdhfjks'''

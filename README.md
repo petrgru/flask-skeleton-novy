@@ -146,7 +146,37 @@ echo "APP_MAIL_PASSWORD=my-mail-password" >> .env
 * [@mquander][mquander] for your patience and mentoring
 * [@miguelgrinberg][miguelgrinberg] for your excellent [flask tutorial][mega-tutorial]
 * [@sloria][sloria] for your great [starter template][cookiecutter-flask]
+### Publishing on Virtual server
+```
+. ../.venv/bin/activate
 
+pip install -r ./requirements.txt
+
+nano requirements.txt - smazat 3.9 a bcrypt
+
+python ./manage.py db upgrade
+
+python ./manage.py runserver --host=0.0.0.0
+
+sudo apt install supervisor
+sudo su -
+nano /etc/supervisor/conf.d/flask.conf
+
+[program:flaskdeploy]
+command = /home/student/.venv/bin/gunicorn manage:app -w 4 --bind=0.0.0.0:8080
+
+directory = /home/student/SmazatFormular  
+user = student
+stdout_logfile = /home/student/gunicorn_stdout.log
+stderr_logfile = /home/student/gunicorn_stderr.log
+redirect_stderr = True
+environment = PRODUCTION=1
+
+
+/etc/init.d/supervisor restart
+
+netstat -vapnl|grep python
+```
 ## Changelog
 
 ### 0.1.0 (07/19/14)

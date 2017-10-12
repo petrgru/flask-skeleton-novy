@@ -30,8 +30,10 @@ Here's the stuff you get right off the bat when using Flask-Skeleton:
 ### Quickstart
 Because sometimes you just want to see it work
 ```
+sudo pip install virtualenv git
+git clone https://github.com/petrgru/flask-skeleton-novy
+mv flask-skeleton-novy flask-skeleton
 cd flask-skeleton
-sudo pip install virtualenv
 make virtualenv
 source ~/.virtualenvs/flask-skeleton/bin/activate
 ./manage.py db upgrade

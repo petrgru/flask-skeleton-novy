@@ -38,7 +38,23 @@ make virtualenv
 source ~/.virtualenvs/flask-skeleton/bin/activate
 ./manage.py db upgrade
 python -c 'import os; print "APP_KEY={}".format(os.urandom(24))' > .env  # Generates random secret key for the app
+
+#spusteni serveru
 ./manage.py runserver
+
+
+#mazani starych migrations
+rm dev.db
+rm migrations/versions/*
+
+# generovani nových migraci DB
+python db upgrade
+python db migrate
+python db upgrade
+
+
+
+
 ```
 
 Now go to [http://localhost:5000/][localhost] in your favorite browser. Huzzah!

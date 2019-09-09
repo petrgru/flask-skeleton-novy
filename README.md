@@ -36,6 +36,7 @@ mv flask-skeleton-novy flask-skeleton
 cd flask-skeleton
 virtualenv -p python2 ../.venv
 . ../.venv/bin/activate
+pip install -r requirments.txt
 ./manage.py db upgrade
 python -c 'import os; print "APP_KEY={}".format(os.urandom(24))' > .env  # Generates random secret key for the app
 

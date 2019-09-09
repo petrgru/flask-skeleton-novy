@@ -1,5 +1,5 @@
 pep8>=1.5.6
-pylint>=1.2.1
+pylint
 flask==0.10.1
 flask-assets
 flask-bcrypt
@@ -11,8 +11,8 @@ flask-wtf==0.9.5
 alembic==0.6.5
 pytest==2.5.2
 webtest==2.0.15
-cssmin==0.2.0
+cssmin
 gunicorn==0.17.2
 #psycopg2==2.5.2
-pyscss==1.2.0
+pyscss
 sqlalchemy==0.9.3

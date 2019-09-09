@@ -37,11 +37,7 @@ cd flask-skeleton
 virtualenv -p python2 ../.venv
 . ../.venv/bin/activate
 pip install -r requirements.txt
-./manage.py db upgrade
 python -c 'import os; print "APP_KEY={}".format(os.urandom(24))' > .env  # Generates random secret key for the app
-
-#spusteni serveru
-./manage.py runserver
 
 
 #mazani starych migrations
@@ -49,9 +45,12 @@ rm dev.db
 rm migrations/versions/*
 
 # generovani nových migraci DB
-python db upgrade
-python db migrate
-python db upgrade
+python manage.py db upgrade
+python manage.py db migrate
+python manage.py db upgrade
+
+#spusteni serveru
+./manage.py runserver
 
 
 

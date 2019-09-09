@@ -34,8 +34,8 @@ Because sometimes you just want to see it work
 git clone https://github.com/petrgru/flask-skeleton-novy
 mv flask-skeleton-novy flask-skeleton
 cd flask-skeleton
-make virtualenv
-source ~/.virtualenvs/flask-skeleton/bin/activate
+virtualenv -p python2 ../.venv
+. ../.venv/bin/activate
 ./manage.py db upgrade
 python -c 'import os; print "APP_KEY={}".format(os.urandom(24))' > .env  # Generates random secret key for the app
 

@@ -13,7 +13,7 @@ alembic==0.6.5
 pytest==2.5.2
 webtest==2.0.15
 cssmin
-gunicorn==0.17.2
+gunicorn==19.5.0
 #psycopg2==2.5.2
 pyscss
 sqlalchemy==0.9.3
